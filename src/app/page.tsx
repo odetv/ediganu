@@ -205,14 +205,22 @@ export default function MenuEditorPage() {
     const c = canvasRef.current;
     if (!c) return;
     const a = document.createElement("a");
-    a.download = "menu-1080x1080.png";
-    a.href = c.toDataURL("image/png");
+    const now = new Date();
+    const dateStr = now
+      .toLocaleDateString("id-ID", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      })
+      .replace(/\//g, "-");
+    a.download = `Menu MBG ${dateStr}.jpg`;
+    a.href = c.toDataURL("image/jpeg");
     a.click();
   }
 
   return (
     <div className="min-h-screen bg-white p-6 flex flex-col items-center gap-6">
-      <div className="text-center mb-4">
+      <div className="text-center sm:mb-4">
         <h1 className="text-3xl font-bold">EDIGANU</h1>
         <p className="text-lg font-medium">Editor Gambar Menu MBG BGN</p>
       </div>
