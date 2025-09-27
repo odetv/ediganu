@@ -126,25 +126,25 @@ export default function MenuEditorPage() {
       const ratio = logo.width / logo.height;
       const drawW = ratio >= 1 ? maxW : maxW * ratio;
       const drawH = ratio >= 1 ? maxW / ratio : maxW;
-      ctx.drawImage(logo, W - drawW - 25, 25, drawW, drawH);
+      ctx.drawImage(logo, W - drawW - 25, 18, drawW, drawH);
     }
 
     /* --- Text tengah dengan line spacing konsisten --- */
-    const centerY = H / 2 + 20;
-    const lineSpacing = 75;
+    const centerY = H / 2 + 12;
+    const lineSpacing = 45;
     ctx.textAlign = "center";
     ctx.fillStyle = "#000";
-    ctx.font = "bold 32px Poppins";
+    ctx.font = "bold 28px Poppins";
     ctx.fillText(subtitle, W / 2, centerY - lineSpacing);
-    ctx.font = "bold 64px Poppins";
+    ctx.font = "bold 42px Poppins";
     ctx.fillText(title, W / 2, centerY);
-    ctx.font = "28px Poppins";
-    ctx.fillText(dateText, W / 2, centerY + 60);
+    ctx.font = "24px Poppins";
+    ctx.fillText(dateText, W / 2, centerY + 40);
 
     /* --- Gambar porsi kecil --- */
-    const margin = 80;
-    const boxW = 520;
-    const boxH = 340;
+    const margin = 50;
+    const boxW = 520 + 55;
+    const boxH = 340 + 55;
     const radius = 25;
 
     if (imgSmall) {
@@ -156,10 +156,10 @@ export default function MenuEditorPage() {
 
         const icon = await tryLoadImage(ICON_KECIL);
         if (icon)
-          ctx.drawImage(icon, x + boxW + 17, y + boxH / 2 - 55, 110, 110);
+          ctx.drawImage(icon, x + boxW + 15, y + boxH / 2 - 55, 110, 110);
 
         ctx.textAlign = "left";
-        ctx.font = "32px Poppins";
+        ctx.font = "28px Poppins";
         ctx.fillText(labelSmall, x + boxW + 140, y + boxH / 2 + 14);
       }
     }
@@ -176,7 +176,7 @@ export default function MenuEditorPage() {
         if (icon) ctx.drawImage(icon, x - 125, y + boxH / 2 - 55, 110, 110);
 
         ctx.textAlign = "right";
-        ctx.font = "32px Poppins";
+        ctx.font = "28px Poppins";
         ctx.fillText(labelBig, x - 140, y + boxH / 2 + 14);
       }
     }
