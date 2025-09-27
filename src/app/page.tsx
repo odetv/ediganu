@@ -311,12 +311,22 @@ export default function MenuEditorPage() {
               />
             </div>
           </div>
-          <button
-            onClick={download}
-            className="px-4 py-2 rounded bg-green-600 text-white"
-          >
-            Download
-          </button>
+          <div className="flex flex-row gap-4 items-center justify-center">
+            <button
+              onClick={download}
+              className="px-4 py-2 rounded bg-blue-600 text-white"
+            >
+              Download
+            </button>
+            <a
+              href="https://wa.me/6285739683673?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20EDIGANU."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded bg-green-600 text-white"
+            >
+              Pusat Bantuan
+            </a>
+          </div>
         </div>
       </div>
     </div>
